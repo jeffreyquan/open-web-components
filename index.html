@@ -1,28 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="Description" content="Put your description here." />
+    <base href="/" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Put your description here.">
-  <base href="/">
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #ededed;
+      }
+    </style>
+    <title>open-web-components</title>
+  </head>
 
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #ededed;
-    }
-  </style>
-  <title>open-web-components</title>
-</head>
+  <body>
+    <button id="open-drawer">Open Drawer</button>
+    <app-drawer id="drw">Testing drawer componenet</app-drawer>
 
-<body>
-  <open-web-components></open-web-components>
+    <script type="module" src="./out-tsc/src/open-web-components.js"></script>
+    <script type="module" src="./out-tsc/src/app-drawer/app-drawer.js"></script>
+    <script>
+      const btn = document.querySelector('#open-drawer');
 
-  <script type="module" src="./out-tsc/src/open-web-components.js"></script>
-</body>
-
+      btn.addEventListener('click', () => {
+        const drawer = document.querySelector('#drw');
+        drawer.setAttribute('opened', true);
+      });
+    </script>
+  </body>
 </html>
